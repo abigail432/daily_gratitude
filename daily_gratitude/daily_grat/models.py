@@ -10,5 +10,8 @@ class User(models.Model):
 class Graditude(models.Model):
     #Fields
     date = models.DateField()
-    gratitudes = models.TextField
+    gratitudes = models.TextField(default='')
     user_submitted = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
+
+    def __str__(self):
+        return self.gratitudes
